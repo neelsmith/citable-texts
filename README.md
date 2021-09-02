@@ -1,7 +1,8 @@
-# citable-texts
+# Hands-on citable texts
 
-Hands-on introduction to fundamental concepts for working with citable texts.
+Hands-on introduction to fundamental concepts for working with citable texts, using Pluto notebooks to introduce:
 
-Pluto notebooks:
-
-- 
+- citation
+- citable corpora
+- tokenization
+- morphological analysis

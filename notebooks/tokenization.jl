@@ -4,55 +4,37 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 9a93386a-0c12-11ec-20a2-8b77a158dec0
+# ╔═╡ 55c410cc-0c14-11ec-2fb9-a9d57f1c6588
 begin
-	using CitableText
-	using CitableCorpus
 	using Orthography
-	using CitableParserBuilder
-	using PolytonicGreek
-	# Add this on Saturday:
-	#using Kanones, Kanones.FstBuilder
+	using CitableText, CitableCorpus
 	md"Notebook version:  **0.1.0**"
 end
 
-# ╔═╡ ec83e5e5-3af7-4572-82d7-3ad58bcd3335
-md"""> Patterns of morphological analysis
->
-> 1. Use an `OrthographicSystem` to tokenize a corpus.
-> 2. Use a `CitableParser` to parse a tokenized corpus.
+# ╔═╡ 7c386b55-09e1-432e-82ae-1671f356e87e
+md"># Tokenizing text"
+
+# ╔═╡ fa5f83ea-8147-4e9c-8040-c4e47ad2398f
+md"""
+## Concepts
+
+- tokenization parses a string into classified substrings, based on defined properties of an orthographic system
+
+
+These concepts are implemented in the `Orthography` module.  (You can find documentation of the `Orthography`	module [here](https://hcmid.github.io/Orthography.jl/stable/).)
 """
-
-# ╔═╡ 5f12d434-12d4-4cbc-a8be-36286943dade
-md"## A complete (toy) example"
-
-# ╔═╡ 08f5c4f9-adcd-484f-bdc9-ae68d7256987
-md"Use simple ASCII orthography (included in `Orthography` module)."
-
-# ╔═╡ c419c8f1-07ef-4a76-a30f-3428443f298e
-orthography = simpleAscii()
-
-# ╔═╡ 65dc47c4-d650-48ec-baf6-2baddb09c88c
-md"## Example using a real parser and orthography for ancient Greek"
-
-# ╔═╡ 14f282dc-186d-469f-8c9c-aec97fdbf8a2
-
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 CitableCorpus = "cf5ac11a-93ef-4a1a-97a3-f6af101603b5"
-CitableParserBuilder = "c834cb9d-35b9-419a-8ff8-ecaeea9e2a2a"
 CitableText = "41e66566-473b-49d4-85b7-da83b66615d8"
 Orthography = "0b4c9448-09b0-4e78-95ea-3eb3328be36d"
-PolytonicGreek = "72b824a7-2b4a-40fa-944c-ac4f345dc63a"
 
 [compat]
 CitableCorpus = "~0.3.0"
-CitableParserBuilder = "~0.10.0"
 CitableText = "~0.9.0"
 Orthography = "~0.10.0"
-PolytonicGreek = "~0.12.3"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -97,18 +79,6 @@ deps = ["CSV", "CitableText", "DataFrames", "DocStringExtensions", "Documenter",
 git-tree-sha1 = "a0adc4d10424fa4e884cfaecdb4ee9f8a019fdcd"
 uuid = "cf5ac11a-93ef-4a1a-97a3-f6af101603b5"
 version = "0.3.0"
-
-[[CitableObject]]
-deps = ["CitableBase", "DocStringExtensions", "Documenter", "Test"]
-git-tree-sha1 = "26433318def871240c90de244a364f056ace7041"
-uuid = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
-version = "0.6.0"
-
-[[CitableParserBuilder]]
-deps = ["CitableCorpus", "CitableObject", "CitableText", "DocStringExtensions", "Documenter", "Orthography", "Test"]
-git-tree-sha1 = "c4efca1ffb612a9f6186643fc773658203f89fbf"
-uuid = "c834cb9d-35b9-419a-8ff8-ecaeea9e2a2a"
-version = "0.10.0"
 
 [[CitableText]]
 deps = ["BenchmarkTools", "CitableBase", "DocStringExtensions", "Documenter", "Test"]
@@ -320,12 +290,6 @@ version = "1.1.2"
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
-[[PolytonicGreek]]
-deps = ["DocStringExtensions", "Documenter", "Orthography", "Test", "Unicode"]
-git-tree-sha1 = "c78fa77dd6adea84511e2491b5211617f59e5037"
-uuid = "72b824a7-2b4a-40fa-944c-ac4f345dc63a"
-version = "0.12.3"
-
 [[PooledArrays]]
 deps = ["DataAPI", "Future"]
 git-tree-sha1 = "a193d6ad9c45ada72c14b731a318bedd3c2f00cf"
@@ -485,12 +449,8 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 """
 
 # ╔═╡ Cell order:
-# ╠═9a93386a-0c12-11ec-20a2-8b77a158dec0
-# ╟─ec83e5e5-3af7-4572-82d7-3ad58bcd3335
-# ╟─5f12d434-12d4-4cbc-a8be-36286943dade
-# ╟─08f5c4f9-adcd-484f-bdc9-ae68d7256987
-# ╟─c419c8f1-07ef-4a76-a30f-3428443f298e
-# ╟─65dc47c4-d650-48ec-baf6-2baddb09c88c
-# ╠═14f282dc-186d-469f-8c9c-aec97fdbf8a2
+# ╠═55c410cc-0c14-11ec-2fb9-a9d57f1c6588
+# ╟─7c386b55-09e1-432e-82ae-1671f356e87e
+# ╠═fa5f83ea-8147-4e9c-8040-c4e47ad2398f
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
