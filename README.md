@@ -2,11 +2,11 @@
 
 Hands-on introduction to fundamental concepts for working with citable texts, using Pluto notebooks to introduce:
 
-- citation
-- retrieval in citable corpora
-- orthography:  validation
-- orthography:  tokenization
-- morphological analysis
+1. citation
+2. retrieval in citable corpora
+3. orthography:  validation
+4. orthography:  tokenization
+5. morphological analys
 
 Applications of these concepts to citable corpora including:
 
