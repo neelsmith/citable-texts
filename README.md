@@ -15,3 +15,10 @@ Applications of these concepts to citable corpora including:
     - morphological metrics
  - topic modeling
  - supervised learning models
+
+
+## Other projects
+
+- generic text browser
+- low-friction reader for morphologically analyzed texts
+- resolve morphological ambiguity

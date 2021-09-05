@@ -10,9 +10,8 @@ begin
 	using CitableCorpus
 	using Orthography
 	using CitableParserBuilder
-	using PolytonicGreek
-	# Add this on Saturday:
-	#using Kanones, Kanones.FstBuilder
+	using Lycian
+
 	md"Notebook version:  **0.1.0**"
 end
 
@@ -33,10 +32,7 @@ md"Use simple ASCII orthography (included in `Orthography` module)."
 orthography = simpleAscii()
 
 # ╔═╡ 65dc47c4-d650-48ec-baf6-2baddb09c88c
-md"## Example using a real parser and orthography for ancient Greek"
-
-# ╔═╡ 14f282dc-186d-469f-8c9c-aec97fdbf8a2
-
+md"## Example using a real parser and orthography for Lycian"
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -44,15 +40,15 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 CitableCorpus = "cf5ac11a-93ef-4a1a-97a3-f6af101603b5"
 CitableParserBuilder = "c834cb9d-35b9-419a-8ff8-ecaeea9e2a2a"
 CitableText = "41e66566-473b-49d4-85b7-da83b66615d8"
+Lycian = "7c215dd3-d1b4-4517-b6c6-0123f1059a20"
 Orthography = "0b4c9448-09b0-4e78-95ea-3eb3328be36d"
-PolytonicGreek = "72b824a7-2b4a-40fa-944c-ac4f345dc63a"
 
 [compat]
 CitableCorpus = "~0.3.0"
-CitableParserBuilder = "~0.10.0"
+CitableParserBuilder = "~0.9.0"
 CitableText = "~0.9.0"
-Orthography = "~0.10.0"
-PolytonicGreek = "~0.12.3"
+Lycian = "~0.2.0"
+Orthography = "~0.8.0"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -105,10 +101,10 @@ uuid = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
 version = "0.6.0"
 
 [[CitableParserBuilder]]
-deps = ["CitableCorpus", "CitableObject", "CitableText", "DocStringExtensions", "Documenter", "Orthography", "Test"]
-git-tree-sha1 = "c4efca1ffb612a9f6186643fc773658203f89fbf"
+deps = ["CitableCorpus", "CitableObject", "CitableText", "DocStringExtensions", "Documenter", "Test"]
+git-tree-sha1 = "987367e9d752828de0fe713e191d5976ed9bcce5"
 uuid = "c834cb9d-35b9-419a-8ff8-ecaeea9e2a2a"
-version = "0.10.0"
+version = "0.9.0"
 
 [[CitableText]]
 deps = ["BenchmarkTools", "CitableBase", "DocStringExtensions", "Documenter", "Test"]
@@ -270,6 +266,12 @@ uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 [[Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
+[[Lycian]]
+deps = ["DocStringExtensions", "Documenter", "Orthography", "Test"]
+git-tree-sha1 = "0afb5162d76290e586e586bdd2fa478a42fad3de"
+uuid = "7c215dd3-d1b4-4517-b6c6-0123f1059a20"
+version = "0.2.0"
+
 [[Markdown]]
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
@@ -305,10 +307,10 @@ uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 version = "1.4.1"
 
 [[Orthography]]
-deps = ["CitableCorpus", "CitableText", "DocStringExtensions", "Documenter", "StatsBase", "Test", "Unicode"]
-git-tree-sha1 = "96ee7d59ea224395c768606541314c1509f70dd9"
+deps = ["DocStringExtensions", "Documenter", "Test", "Unicode"]
+git-tree-sha1 = "5593d0e9ef2779815073c641f63eca7ea0e2e046"
 uuid = "0b4c9448-09b0-4e78-95ea-3eb3328be36d"
-version = "0.10.0"
+version = "0.8.0"
 
 [[Parsers]]
 deps = ["Dates"]
@@ -319,12 +321,6 @@ version = "1.1.2"
 [[Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-
-[[PolytonicGreek]]
-deps = ["DocStringExtensions", "Documenter", "Orthography", "Test", "Unicode"]
-git-tree-sha1 = "c78fa77dd6adea84511e2491b5211617f59e5037"
-uuid = "72b824a7-2b4a-40fa-944c-ac4f345dc63a"
-version = "0.12.3"
 
 [[PooledArrays]]
 deps = ["DataAPI", "Future"]
@@ -491,6 +487,5 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─08f5c4f9-adcd-484f-bdc9-ae68d7256987
 # ╟─c419c8f1-07ef-4a76-a30f-3428443f298e
 # ╟─65dc47c4-d650-48ec-baf6-2baddb09c88c
-# ╠═14f282dc-186d-469f-8c9c-aec97fdbf8a2
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
