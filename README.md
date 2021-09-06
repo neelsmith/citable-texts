@@ -6,7 +6,7 @@ Hands-on introduction to fundamental concepts for working with citable texts, us
 2. retrieval in citable corpora
 3. orthography:  validation
 4. orthography:  tokenization
-5. morphological analys
+5. morphological analysis
 
 Applications of these concepts to citable corpora including:
 
